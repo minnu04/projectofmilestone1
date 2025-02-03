@@ -1,13 +1,23 @@
-const {app} = require("./app")
+const { connect, connection } = require("mongoose")
+const{app} = require("./app")
 require("dotenv").config()
- 
+
 const port=process.env.PORT
 
-app.get("/ecom",async(req,res)=>{
-    res.send("heloooo")
+const Connect=require("./db/connection")
+
+app.get("/test",async(req,res)=>{
+
+    res.send("hello.....")
 })
 
-
-app.listen(port,()=>{
-    console.log(`App is running on http://localhost:${port}`)
-})
+app.listen(port,async()=>{
+    try{
+        await Connect
+        console.log(`app is running on http://localhost:${port}`)
+    }
+    catch(err){
+        console.log(err)
+    }
+    
+ })
