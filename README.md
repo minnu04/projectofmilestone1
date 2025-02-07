@@ -56,3 +56,19 @@ we created a file upload with multer
 Sometimes, your users might want to upload files like profile pictures.
 To help with this, we use Multer, which is a tool that makes it easy to upload files to your server.
 Multer will help us store user images in the backend and keep track of them. It's like a virtual file cabinet for storing pictures!
+
+## MILESTONE5 💡
+I created the frontend UI for users to register by filling out their details.
+We ensured that user inputs (like email and password) are properly validated before they’re submitted. Update the README file: Don’t forget to document what you’ve accomplished!
+# THE SIGN-UP PAGE
+The Sign-Up page is where users can enter their details to create an account. This page will typically include fields like:
+Name
+Email
+Password
+This page allows users to provide their information, which will be sent to the server for processing.
+We createD a simple yet effective sign-up form that looks clean and is user-friendly.
+
+## Steps for Milestone 5 📝
+In this milestone, you will work on the frontend while your mentor will guide you through:
+Building the Sign-Up Page with HTML and CSS.
+Adding form validation to ensure users input valid data.

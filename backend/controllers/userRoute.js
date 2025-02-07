@@ -1,7 +1,7 @@
 let express=require("express")
 const { UserModel } = require("../model/usermodel");
 const catchAsyncError = require("../middleware/catchAsyncError");
-const Errorhadler=require("../utils/errorhadler")
+const Errorhadler=require("../utils/errHandler")
 const bcrypt=require("bcrypt")
 const jwt=require("jsonwebtoken")
 const { sendMail } =require("../utils/mail")
@@ -116,7 +116,33 @@ userRoute.post("/upload", upload.single("photo"),catchAsyncError(async(req,res,n
         res.status(200).json("Uploaded")
 }))
 
+userRoute.post("/login",catchAsyncError(async(req,res,next)=>{
+  const {email,password}=req.body
+  if(!email || !password){
+    next(new Errorhadler("email and passwoed are required",400))
+  }
+  let user =UserModel.findOne({email})
+  if(!user){
+    next(new Errorhadler("please signup before login",400))
+  }
+  if(!user.isActivated){
+    next(new Errorhadler("please signup before login",400))
+  }
+  let isMatching=await bcrypt.compare(password,user.password);
+  if(!isMatching){
+    next(new Errorhadler("password is incorrect",400));
+  }
+  let token=jwt.sign({id:user_id},process.env.ACCESS,{expiresIn: 60*60*60*60*24*30})
+
+  res.cookies("accesstoken",token,{
+    httpOnly:true,
+    MaxAge:"7d"
+  })
+
+  res.status(200).json({status:true,message:"login sucessful"})
+}))
 
 
 
-  module.exports={userRoute}
+
+  module.exports=userRoute

@@ -1,35 +1,13 @@
 let express= require("express")
-const ErrorHandler = require("./utils/Errorhandler");
-const catchAsyncErrors = require("./middleware/catchAsyncError");
-const {UserModel} = require("./model/usermodel")
+const {UserModel} = require("./model/usermodel");
+const userRoute=require("./controllers/userRoute");
+
 let app=express()
 app.use(express.json())
+const errorMiddleware=require("./middleware/error")
 
-// const Errorhandle=require("./middelware/error")
+app.use("/user",userRoute)
 
-
-
-// app.post("/create",  catchAsyncErrors (async (req, res, next)=>{
-
-// const {name,email,password} =req.body
-
-// if(name &&email && password){
-// const newUser= new UserModel({ 
-//     name, email, password 
-// })
-
-// await newUser.save()
-
-// res.status(200).send({msg: "registration successfull"})
-
-// }
-
-// else{
-
-// return next(new ErrorHandler("registration unsuccessfull", 400));
-// }
-// }))
-// app.use(Errorhandle)
-
+app.use(errorMiddleware)
 
 module.exports={app}
