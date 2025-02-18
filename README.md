@@ -72,3 +72,19 @@ We createD a simple yet effective sign-up form that looks clean and is user-frie
 In this milestone, you will work on the frontend while your mentor will guide you through:
 Building the Sign-Up Page with HTML and CSS.
 Adding form validation to ensure users input valid data.
+
+## MILESTONE6 💥
+Understand how to encrypt the passwords before saving.
+Know how to store complete user data securely in the database.
+### encrypting passwords
+Protect User Data: Keeps passwords safe if hackers access the database.
+Privacy: Ensures user passwords aren’t visible to anyone.
+Compliance: Follows security laws like GDPR and PCI-DSS.
+Stops Password Theft: Encrypted passwords can’t be easily stolen or guessed
+
+## Steps for Milestone 6 📝
+Encrypt the Password:
+Use bcrypt to hash the user's password during signup.
+Save the hashed password in the database instead of plain text.
+Store Complete User Data:
+Save all the user's data (e.g., name, email, etc.) in the database while ensuring that the password remains encrypted.
