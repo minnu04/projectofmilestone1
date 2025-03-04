@@ -1,6 +1,5 @@
 let multer=require("multer")
 let path=require("path")
-console.log(path.join(__dirname,"../upload"),"")
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -8,10 +7,21 @@ const storage = multer.diskStorage({
     },
     filename: function (req, file, cb) {
       const uniqueSuffix = Date.now() + '-' + Math.round(Math.random())
-      cb(null, file.fieldname + '-' + uniqueSuffix)
+      cb(null, file.fieldname + '-' + uniqueSuffix+".png")
+    }
+  })
+
+  const prodsuctStorage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, path.join(__dirname,"../productUpload"))
+    },
+    filename: function (req, file, cb) {
+      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random())
+      cb(null, file.fieldname + '-' + uniqueSuffix+".png")
     }
   })
   
   const upload = multer({ storage: storage })
+  const productUpload = multer({ storage: prodsuctStorage })
 
-  module.exports=upload;
+  module.exports={upload,productUpload};

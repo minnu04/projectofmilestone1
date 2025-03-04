@@ -88,3 +88,84 @@ Use bcrypt to hash the user's password during signup.
 Save the hashed password in the database instead of plain text.
 Store Complete User Data:
 Save all the user's data (e.g., name, email, etc.) in the database while ensuring that the password remains encrypted.
+
+## MILESTONE7 🔑
+### User Enters Credentials:
+The user provides their email/username and password on the login page.
+
+### Fetch User Data from Database:
+The backend retrieves the user record based on the provided email/username.
+If the user is not found, return an error: "User does not exist."
+Compare Encrypted Passwords:
+
+Process the user's input password using the same hashing algorithm (e.g., bcrypt).
+Compare the resulting hash to the stored hashed password.
+If they match, the user is authenticated; if not, send an error.
+
+## Steps for Milestone 7 📝
+Create Login Endpoint:
+
+Accept user credentials (email/username and password).
+Retrieve the corresponding user from the database.
+Validate Password:
+
+Use bcrypt to hash the entered password.
+Compare it with the stored hashed password for authentication.
+
+## MILESTONE8 🎯
+Create a card component.
+Display those cards on the products page.
+# Create Card Components:
+Presents product details in a clear and visually appealing way.
+Can be used across multiple pages or sections of the app.
+Makes it easy for users to browse and interact with products.
+Keeps the homepage clean and structured.
+# Display a Single Card for Multiple Products
+Design a single card component that accepts product details as props.
+Use array mapping to iterate over the product list and render a card for each product.
+Pass unique product information (e.g., name, price, image) to each card.
+Ensure the layout remains uniform for all products
+
+## MILESTONE9 🐣
+Create a form that will take all the details of product
+Take multiple images as input.
+#  Create Product form:
+Here we will create an form to input all the details of product.
+This details will be eventually saved in database and will be displayed on products home page we created in previous milestone.
+
+## MILESTONE 10 🌐
+Write product schema
+To create an end point to validate and store product details in mongodb.
+# Product Schema
+Define the structure of product data (e.g., name, description, price, image URL) using Mongoose. -Ensure each field has proper validation (e.g., required fields, correct data types).
+# Endpoint Creation
+Build a POST endpoint to receive product data.
+Validate and save the product details to MongoDB.
+# Why Validation?
+Ensures that only valid data is saved in the database, maintaining data integrity and preventing errors.
+
+## MILESTONE 11 🌟
+Write an endpoint that will send data from extract and send data from mongodb.
+How to receive data at frontend -How to display that data dynamically using product card created earlier.
+## Steps for Milestone 11📝
+Write an endpoint that will send all products data to frontend In frontend write an function to get all the data Display these data dynamically passing to product card component
+
+## MILESTONE 12 💡
+Write an endpoint that will send data by filtering with my mail and send data from mongodb.
+Receive data at frontend -How to display that data dynamically using product card created earlier.
+
+## Steps for Milestone 12📝
+Write an endpoint that will send all products with user mail to frontend In frontend write an function to get all the data Display these data dynamically passing to product card component
+
+## MILESTONE 13 💥
+Write an endpoint that will update the existing data in MongoDB.
+To auto fill the form with previous data and give option to edit.
+
+## Steps for Milestone 13📝
+Write an endpoint that will receive new data and update the existing data inside MondoDB. In frontend we will add an edit button to the product card. When click on edit we will send the data to form and make it auto fill and have option to edit those data and save.
+
+## MILESTONE 14 🔑
+ To write an endpoint that delete the product with specific ID from MongoDB
+
+## Steps for Milestone 14📝
+Write an endpoint that will Delete the data form MongoDB using ID. In frontend we will add an delete button to the product card. When click on delete button we will send the product id to server endpoint.
