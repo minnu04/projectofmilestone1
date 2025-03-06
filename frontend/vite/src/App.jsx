@@ -8,12 +8,13 @@ import Login from "./components/login";
 import Signup from "./components/signup";
 import SellerProcutPage from "./pages/SellerProductPage";
 import CreateProduct from "./components/Createproduct";
+import NavBar from "./components/nav";
 
 function App() {
 
   return (
     <BrowserRouter>
-      <Navbar />
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/Login" element={<Loginpage />}></Route>
