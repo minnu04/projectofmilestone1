@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Loginpage from "./pages/Loginpage"
-import Navbar from "./pages/Navbar";
+import IndividualProduct from "./pages/IndividualProduct"
 import Login from "./components/login";
 import Signup from "./components/signup";
 import SellerProcutPage from "./pages/SellerProductPage";
@@ -20,6 +20,7 @@ function App() {
         <Route path="/Login" element={<Loginpage />}></Route>
         <Route path="/create" element={<CreateProduct/>}></Route>
         <Route path="/modify"element={<SellerProcutPage/>}></Route>
+        <Route path="/pro"element={<IndividualProduct/>}></Route>
       </Routes>
     </BrowserRouter>
   );

@@ -169,3 +169,37 @@ Write an endpoint that will receive new data and update the existing data inside
 
 ## Steps for Milestone 14📝
 Write an endpoint that will Delete the data form MongoDB using ID. In frontend we will add an delete button to the product card. When click on delete button we will send the product id to server endpoint.
+## MILESTONE 15 🎯
+Have to create and Nav component.
+Have to reuse the same component in multiple pages.
+## Steps for Milestone 15📝
+Create an new Nav component with links to all pages:
+
+Home
+My-products
+Add product
+cart
+Make the Navbar responsive to all screen sizes.
+
+
+## MILESTONE 16 🐣
+Have create to new page to display each product.
+Need to add quantity and add to card button.
+## Steps for Milestone 16📝
+Create an new page that display all the product data
+
+
+## MILESTONE 17 🌐
+Edit the user schema to store cart products .
+Write an end point to receive the product details and store in database.
+## Steps for Milestone 17📝
+Write the cart schema to store products
+Write an endpoint to store receive and store product details in cart
+
+
+## MILESTONE 18 🌟
+Create an endpoint to receive request from cart page.
+Create an backend endpoint to fetch all the products inside cart with user mail.
+## Steps for Milestone 18📝
+Create an Backend endpoint for cart page
+Write and endpoint to get products inside cart for user

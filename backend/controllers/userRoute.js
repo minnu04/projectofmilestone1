@@ -1,5 +1,4 @@
 let express=require("express")
-const { UserModel } = require("../model/usermodel");
 const catchAsyncError = require("../middleware/catchAsyncError");
 const Errorhadler=require("../utils/errHandler")
 const bcrypt=require("bcrypt")
@@ -7,10 +6,8 @@ const jwt=require("jsonwebtoken")
 const { sendMail } =require("../utils/mail")
 let userRoute= express.Router()
 const {upload}=require("../middleware/multer")
-
+const UserModel =require("../model/usermodel")
   
-
-
   userRoute.post("/signup",catchAsyncError( async (req, res, next) => {
 
    
@@ -33,7 +30,7 @@ const {upload}=require("../middleware/multer")
           
          
 
-          let token =jwt.sign({id:newUser._id},process.env.SECRET,{expiresIn:60*60*60*5})
+          let token =jwt.sign({id:newUser._id},process.env.SECRET,{expiresIn:60*60*60*60860})
           let PORT=process.env.PORT
           let activation_url=`http://localhost:${PORT}/user/activation/${token}`
           
@@ -110,14 +107,15 @@ userRoute.post("/login",catchAsyncError(async(req,res,next)=>{
   if(!isMatching){
     return next(new Errorhadler("password is incorrect",400));
   }
-  let token=jwt.sign({id:user._id},process.env.ACCESS,{expiresIn: 60*60*60*60*24*30})
+  let token=jwt.sign({id:user._id},process.env.ACCESS,{expiresIn: 1000*60*60*60*24})
 
   res.cookie("accesstoken",token,{
     httpOnly:true,
-    MaxAge:"7d"
+    secure:false,
+    sameSite:"lax",
   })
 
-  res.status(200).json({status:true,message:"login sucessful"})
+  res.status(200).json({status:true,message:"login sucessful",token})
 }))
 
 
