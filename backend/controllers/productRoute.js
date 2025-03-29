@@ -14,18 +14,17 @@ productRouter.post("/create-product",productUpload.array("images",10), catchAsyn
     const { email,name, description,category,tags,price,stock} = req.body;
 
     const images =req.files.map((file)=>path.basename(file.path));
-    console.log(email,name, description,category,tags,price,images);
-
+    
     if (!email ||!name ||!description ||!category ||!tags ||!price ||!images ||!stock) {
        return  next(new Errorhadler("All fields are required",400))
     }
     let user=await UserModel.findOne({email})
-    console.log(email)
+    console.log(user)
     if(!user){
         return next(new Errorhadler("user is not exist",404))
     }
     let product=new ProductModel({email,name, description,category,tags,price,images,stock})
-
+    console.log(product)
 
     await product.save()
     res.status(201).json({message:"Product created successfully"})
@@ -96,9 +95,9 @@ productRouter.put("/update/:id",productUpload.array("images",10),catchAsyncError
 }))
 
 
-
-
 productRouter.post('/cart',auth, catchAsyncError(async (req, res, next) => {
+    let update=req.query.update
+    console.log(update)
     const {productId, quantity } = req.body;
     let userId=req.user_id 
     if (!userId) {
@@ -119,6 +118,21 @@ productRouter.post('/cart',auth, catchAsyncError(async (req, res, next) => {
     if (!product) {
         return next(new Errorhadler("Product not found", 404));
     }
+    if(update){
+        const cartItemIndex=user.cart.findIndex(
+            (item)=> item.productId.toString() === productId
+        );
+        if (cartItemIndex > -1){
+            user.cart[cartItemIndex].quantity=quantity;
+            await user.save();
+
+            return res.status(200).json({
+                status: true,
+                message:"Cart updated succesfully",
+                cart: user.cart,
+            })
+        }
+    }
     const cartItemIndex = user.cart.findIndex(
         (item) => item.productId.toString() === productId
     );
@@ -137,6 +151,23 @@ productRouter.post('/cart',auth, catchAsyncError(async (req, res, next) => {
         cart: user.cart,
     });
 }));
+
+productRouter.get("/cart",auth,catchAsyncError(async(req,res,next)=>{
+
+    let userID=req.user_id
+    if(!userID){
+        return next(new Errorhadler("user id is required",404))
+    }
+    if(!mongoose.Types.ObjectId.isValid(userID)){
+        return next(new Errorhadler("Invalid userID",400))
+    }
+
+    let cart=await UserModel.findById(userID).populate({
+        path:"cart.productId",
+        model:"Product"
+    })
+res.status(200).json({status:true,message:cart})
+}))
 
 module.exports=productRouter
 
