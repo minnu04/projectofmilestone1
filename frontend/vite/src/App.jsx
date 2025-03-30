@@ -13,6 +13,7 @@ import CreateProduct from "./components/Createproduct";
 import NavBar from "./components/nav";
 import IndividualProduct from "./pages/IndividualProduct";
 import Cart from './pages/cart'
+import Profile from'./pages/Profile'
 function App() {
 
   return (
@@ -24,7 +25,8 @@ function App() {
         <Route path="/create" element={<CreateProduct/>}></Route>
         <Route path="/modify"element={<SellerProcutPage/>}></Route>
         <Route path="/pro"element={<IndividualProduct/>}></Route>
-        {/* <Route path="/cart"element={<Cart/>}></Route> */}
+        <Route path="/cart"element={<Cart/>}></Route> 
+        <Route path="/profile"element={<Profile/>}></Route>
       </Routes>
     </BrowserRouter>
   );

@@ -13,7 +13,7 @@ export default function ProductPage() {
     useEffect(() => {
       const fetchData = async () => {
           try {
-              let response = await axios.get("http://localhost:2204/product/allproduct");
+              let response = await axios.get("http://localhost:5173/product/allproduct");
               
               if (response.status === 200) {  
                  

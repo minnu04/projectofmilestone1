@@ -14,7 +14,7 @@ const IndividualProduct = () => {
     useEffect(() => {
       const fetchData = async () => {
           try {
-              let response = await axios.get(`http://localhost:2204/product/individualproduct/${id}`);
+              let response = await axios.get(`http://localhost:5173/product/individualproduct/${id}`);
 
               if (response.status === 200) {  
                   
@@ -47,7 +47,7 @@ const IndividualProduct = () => {
     const handleClick=async()=>{
          
         try {
-            let response=axios.post("http://localhost:8080/product/cart",{
+            let response=axios.post("http://localhost:5173/product/cart",{
                 productId:id,
                 quantity:quantity
             }, {
@@ -73,7 +73,7 @@ const IndividualProduct = () => {
 
             {product.images&&<div className="relative">
                  <img
-                    src={`http://localhost:8080/products-photo/${product.images[currentImageIndex]}`}
+                    src={`http://localhost:5173/products-photo/${product.images[currentImageIndex]}`}
                     alt="Product"
                     className="w-full h-64 object-cover"
                 />

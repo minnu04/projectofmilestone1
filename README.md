@@ -211,5 +211,13 @@ Write an endpoint to increase and decrease the quantity
 create cart frontend page and display the products
 For each product add an option to increase and decrease quantity using + and - buttons.
 Create an Backend endpoint for increase and decrease quantity
-
-
+## MILESTONE 20 💥
+Create and backend endpoint that will send all the user data using mail.
+Create an frontend profile page that will display all the user data
+display profile photo, name, mail and addresses.
+## Steps for Milestone 20📝
+Create an Backend endpoint that will sent user data.
+create frontend profile page.
+display profile photo, name and email in one section.
+In another section display address and add an button called "Add address".
+If there are no address display "No address found".

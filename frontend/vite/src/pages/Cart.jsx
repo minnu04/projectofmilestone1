@@ -7,7 +7,7 @@ import CartProduct from "../components/cartProduct"
      const [products, setProducts] = useState([]);
  
      useEffect(() => {
-         fetch(`http://localhost:8080/product/cart`,{
+         fetch(`http://localhost:5173/product/cart`,{
              credentials: "include"
          })
            .then((res) => {
