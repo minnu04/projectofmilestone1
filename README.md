@@ -221,3 +221,11 @@ create frontend profile page.
 display profile photo, name and email in one section.
 In another section display address and add an button called "Add address".
 If there are no address display "No address found".
+## MILESTONE 21 🔑
+Create an frontend form that will will take address.
+Take country, city, address1, address2, zip code, address type
+## Steps for Milestone 21📝
+create address form frontend page
+Create an state that will store input address
+when we click on add address in profile it should navigate to this form page.
+This lesson will help you in understanding how to address form.

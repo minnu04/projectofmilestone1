@@ -1,6 +1,4 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from '/vite.svg'
+
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -14,6 +12,7 @@ import NavBar from "./components/nav";
 import IndividualProduct from "./pages/IndividualProduct";
 import Cart from './pages/cart'
 import Profile from'./pages/Profile'
+import Order from './pages/Order'
 function App() {
 
   return (
@@ -27,6 +26,7 @@ function App() {
         <Route path="/pro"element={<IndividualProduct/>}></Route>
         <Route path="/cart"element={<Cart/>}></Route> 
         <Route path="/profile"element={<Profile/>}></Route>
+        <Route path="/order" element={<Order/>}></Route>
       </Routes>
     </BrowserRouter>
   );
