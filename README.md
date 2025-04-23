@@ -264,7 +264,7 @@ Description: Returns all addresses for the currently logged-in user.
 
 Authentication: Required (JWT or session-based).
 
-## MILESTONE 17 🌐
+## MILESTONE 24 🌐
 We will create an order conformation page.
 
 ## Steps for Milestone 24📝
@@ -292,4 +292,14 @@ Handle errors if data (products or address) is missing or API fails.
 ### 📦 Backend (If Required)
 (Optional, depending on current setup)
 
-Create a POST endpoint to submit the final order:
+Create a POST endpoint to submit the final order.
+
+## MILESTONE 25 🌟
+we will create an backend endpoint for place order.
+
+## Steps for Milestone 24📝
+🔙 Backend
+✅ Endpoint: Place Order
+Route: POST /api/orders
+
+Description: Receives products, address, and user email. Creates individual orders per product with the same address.
