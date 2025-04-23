@@ -229,3 +229,37 @@ create address form frontend page
 Create an state that will store input address
 when we click on add address in profile it should navigate to this form page.
 This lesson will help you in understanding how to address form.
+
+## MILESTONE 22 🎯
+Create an backend endpoint that will store the address inside user profile in database.
+
+## Steps for Milestone 22📝
+Need to create an endpoint that will receive the address from address form in frontend
+Add the address to the address array inside user collection.
+
+## MILESTONE 23 🐣
+ we will make our create an select address page in frontend and we will write product schema for the orders in the backend.
+
+ ## Steps for Milestone 23📝
+### Frontend
+1. Cart Page
+Add a "Place Order" button.
+
+On button click, redirect user to /select-address.
+
+2. Select Address Page
+Fetch all saved addresses of the user using the backend API.
+
+Display each address in a card format.
+
+Allow selecting one address.
+
+Provide a Continue to Payment/Review Order button.
+
+### 🔙 Backend
+1. Address Endpoint
+Route: GET /api/addresses
+
+Description: Returns all addresses for the currently logged-in user.
+
+Authentication: Required (JWT or session-based).

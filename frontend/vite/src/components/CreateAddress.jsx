@@ -22,7 +22,7 @@ const CreateAddress =()=>{
          };
           console.log(addressData)
          try {
-             const response = await axios.put("http://localhost:8080/user/add-address ",addressData,{
+             const response = await axios.put("http://localhost:2204/user/add-address ",addressData,{
                  withCredentials:true
              })
                  

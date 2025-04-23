@@ -10,7 +10,7 @@ import SellerProcutPage from "./pages/SellerProductPage";
 import CreateProduct from "./components/Createproduct";
 import NavBar from "./components/nav";
 import IndividualProduct from "./pages/IndividualProduct";
-import Cart from './pages/cart'
+import Cart from './pages/Cart'
 import Profile from'./pages/Profile'
 import Order from './pages/Order'
 function App() {
