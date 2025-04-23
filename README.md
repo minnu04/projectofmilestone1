@@ -263,3 +263,33 @@ Route: GET /api/addresses
 Description: Returns all addresses for the currently logged-in user.
 
 Authentication: Required (JWT or session-based).
+
+## MILESTONE 17 🌐
+We will create an order conformation page.
+
+## Steps for Milestone 24📝
+### Frontend
+1.Order Confirmation Page (/order-confirmation)
+Display all the products the user has in their cart, including:
+
+Product name
+
+Quantity
+
+Price
+
+Show the selected address for delivery.
+
+Calculate and display the total value of the cart (subtotal of all items).
+
+Include a "Place Order" button at the bottom to confirm and submit the order.
+
+2. UX Enhancements
+Show loading states while data is being fetched.
+
+Handle errors if data (products or address) is missing or API fails.
+
+### 📦 Backend (If Required)
+(Optional, depending on current setup)
+
+Create a POST endpoint to submit the final order:
